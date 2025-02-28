@@ -1,0 +1,12 @@
+1. installed laravel herd
+2. installed php in herd
+3. created a new laravel app
+
+/\DAY 1/\
+a. first lesson on routes: hold the links to the various views(webpages)
+
+/\DAY 2/\
+I learnt about making general layouts that can be used as a template by the blade templating engine.
+$slot variable is used as a blade helper to display info in h1-h6, 
+also I learnt that <?php echo $slot ?>  is just the same as {{ $slot }}. This means that the double curly braces are to echo info on the webpage.
+next up: Tailwind CSS for the layout practice.
