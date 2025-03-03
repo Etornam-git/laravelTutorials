@@ -10,3 +10,18 @@ I learnt about making general layouts that can be used as a template by the blad
 $slot variable is used as a blade helper to display info in h1-h6, 
 also I learnt that <?php echo $slot ?>  is just the same as {{ $slot }}. This means that the double curly braces are to echo info on the webpage.
 next up: Tailwind CSS for the layout practice.
+
+/\DAY 3/\
+I built a 3-page layout.
+
+
+ASSIGNMENT: create a dynamic nav-bar-link layout,
+that uses one template with the {{$slot}} to display which page is active.
+
+/\DAY 4/\
+Intro to components in laravel. ($attributes). Used for templates that have attributes like in HTML (i.e. href="", id="" or even class="")
+Intro to tailwind css UI.
+
+/\DAY 5/\
+How to edit sections in the template to suite the route(on both desktop and mobile).
+Leanrned how to create custom {{slot}} for the template. 
