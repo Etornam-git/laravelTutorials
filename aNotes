@@ -25,3 +25,12 @@ Intro to tailwind css UI.
 /\DAY 5/\
 How to edit sections in the template to suite the route(on both desktop and mobile).
 Leanrned how to create custom {{slot}} for the template. 
+The request helper function [request()->]. It is an object called to grab the info from the current request by it's attribute methods
+<!-- this line is static. i.e. it can only move to the home page..
+ making it dynamic we introduce the attributes of each line by our slot variable -->
+<a {{ $attributes }}>{{ $slot }}</a>
+Ctrl + Alt + Up to type on multiple lines
+in laravel there are props and attributes:
+an attribute is href, id, class etc. the prop is anything that is not an attribute
+--Assignment
+introduce a new prop called type which will indicate whetget the navlink should be presented as a nav-link or a button
