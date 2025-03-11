@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Arr;
+
+use App\Models\job; 
+
+
 
 Route::get('/', function () {
     // the view takes a second argument, an array that can take data to display on the view
@@ -23,12 +26,7 @@ Route::get('/about', function () {
 // normal jobs page route. Where each line is a link to a job
 Route::get('/jobs', function (){
     return view('jobs',[
-        'jobs' => [
-            ['id'=>1,'title'=>'Developer','Salary'=>'5000'],
-            ['id'=>2,'title'=>'Designer','Salary'=>' 2000'],
-            ['id'=>3,'title'=>'Product Manager','Salary'=>' 3000']
-        ] 
-        ]);
+        'jobs' => job::all()]);
     // laravel includes an arr class that can be looped through to get the content
    
 });
@@ -37,15 +35,7 @@ Route::get('/jobs', function (){
 // it takes you to the job page, by the id of the job array
 Route::get('/job/{id}/', function ($id){ 
     // dd($id);
-    $jobs = [
-        ['id'=>'1','title'=>'Developer','Salary'=>'5000'],
-        ['id'=>'2','title'=>'Designer','Salary'=>' 2000'],
-        ['id'=>'3','title'=>'Product Manager','Salary'=>' 3000']
-        ];
-
-        $job = Arr::first($jobs, function($job) use ($id) {
-            return $job['id'] == $id;
-        });
+         $job = job::find($id);
         // $job = \Illuminate\Support\Arr::first($jobs, fn($job) => $job['id'] == $id);
         // dd($job);
         return view('job',['job' => $job]); 

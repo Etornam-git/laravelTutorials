@@ -41,3 +41,9 @@ Using the concepts of props to check the type of a nav-link. When set to button 
 ---Routing (in the routes/web.php) file
 The use of the Route class with the get method to display pages, stored data for display etc. The use of arrays in keeping the data.
 In routing, data can be passed a parameter in a link.
+
+/\DAY 7/\
+Making use of OOP in PHP-Laravel
+The models are  classes equivalent to tables in a database. They basically contain data for use. 
+
+/\DAY 8/\
