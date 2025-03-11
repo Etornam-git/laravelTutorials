@@ -7,7 +7,7 @@
     <!-- Link 1 to access tailwindCSS -->
     <script src="https://cdn.tailwindcss.com"></script>
        <!-- Link 2 to access tailwindCSS. Since I installed tailwind is installed via vite(check vite.config.js) -->
-    <!-- @vite('resources/css/app.css') -->
+    {{-- @vite('resources/css/app.css') --}}
 </head>
 <body>
         <!--
@@ -31,8 +31,9 @@
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                  <!-- the nav-link.blade.php file contains the template or each nav component with the help of -->
                 <x-nav-link href="/" :active="request()->is('/')" >Home</x-nav-link>
-                <x-nav-link href="/about" id="2345678iuh" :active="request()->is('about')" :type="request()->get_resource_type('button')">About</x-nav-link>
+                <x-nav-link href="/about" :active="request()->is('about')" >About</x-nav-link>
                 <x-nav-link href="/contact" :active="request()->is('contact')" >Contact</x-nav-link>
+                <x-nav-link href="/jobs" :active="request()->is('job')">Jobs</x-nav-link>
                 </div>
             </div> 
             </div>

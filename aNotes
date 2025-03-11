@@ -33,4 +33,9 @@ Ctrl + Alt + Up to type on multiple lines
 in laravel there are props and attributes:
 an attribute is href, id, class etc. the prop is anything that is not an attribute
 --Assignment
-introduce a new prop called type which will indicate whetget the navlink should be presented as a nav-link or a button
+introduce a new prop called type which will indicate whetget the navlink should be presented as a anchor tag  or a button
+
+/\DAY 6/\
+---Solved DAY 5 assignment
+Using the concepts of props to check the type of a nav-link. When set to button the nav-link now has a button tag else an anchor tag as usual
+---Routing (in the routes/web.php) file
