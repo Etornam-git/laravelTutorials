@@ -39,3 +39,4 @@ introduce a new prop called type which will indicate whetget the navlink should 
 ---Solved DAY 5 assignment
 Using the concepts of props to check the type of a nav-link. When set to button the nav-link now has a button tag else an anchor tag as usual
 ---Routing (in the routes/web.php) file
+The use of the Route class with the get method to display pages, stored data for display etc. The use of arrays in keeping the data.
