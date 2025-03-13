@@ -13,8 +13,6 @@ next up: Tailwind CSS for the layout practice.
 
 /\DAY 3/\
 I built a 3-page layout.
-
-
 ASSIGNMENT: create a dynamic nav-bar-link layout,
 that uses one template with the {{$slot}} to display which page is active.
 
@@ -25,3 +23,55 @@ Intro to tailwind css UI.
 /\DAY 5/\
 How to edit sections in the template to suite the route(on both desktop and mobile).
 Leanrned how to create custom {{slot}} for the template. 
+The request helper function [request()->]. It is an object called to grab the info from the current request by it's attribute methods
+<!-- this line is static. i.e. it can only move to the home page..
+ making it dynamic we introduce the attributes of each line by our slot variable -->
+<a {{ $attributes }}>{{ $slot }}</a>
+Ctrl + Alt + Up to type on multiple lines
+in laravel there are props and attributes:
+an attribute is href, id, class etc. the prop is anything that is not an attribute
+--Assignment
+introduce a new prop called type which will indicate whetget the navlink should be presented as a anchor tag  or a button
+
+/\DAY 6/\
+---Solved DAY 5 assignment
+Using the concepts of props to check the type of a nav-link. When set to button the nav-link now has a button tag else an anchor tag as usual
+---Routing (in the routes/web.php) file
+The use of the Route class with the get method to display pages, stored data for display etc. The use of arrays in keeping the data.
+In routing, data can be passed a parameter in a link.
+
+/\DAY 7/\
+Making use of OOP in PHP-Laravel
+The models are  classes equivalent to tables in a database. They basically contain data for use. 
+
+/\DAY 8/\
+"php artisan is Laravel’s CLI tool that helps automate tasks like migrations, seeding, creating models, clearing caches, and more. It provides many built-in commands, and all Laravel-specific commands start with php artisan to execute them in the terminal."
+To see the tables, we first need to connect to our database. using our CLI or TablePlus GUI. (recommended by Jeffery Way)
+The table plus is used to view all tables in our database-- make edits, add new, remove etc.
+The migrations contain the tables in our database in PHP code, where we can as well do the edits we want. To reflect the changes,we need to re-run migrations.
+Because the migrations are defined in PHP and can also be managed effectively, they can be worked on by other collaborators and to get an identical database, they simply need to run the "php artisan migrate" command.
+--CREATING TABLES
+syntax : create_'table_name'_table.php
+after edit in database tables, you need to refresh it so the effect is shown.
+created a new migration name 'create_job_listings_table' and populated it with data
+
+
+/\DAY 9/\
+Fetch data from the database and rendering on the frontend.
+ELOQUENT ORM (Object Relation Mapper)
+An orm maps an object(table row) to an objct in our php code (class)
+
+Eloquent uses convention over configuration. Naming conventions are chosen over their configurations 
+Eloquent automatically figures out which database table a model should use. It does this by taking the model’s name, converting it to snake case, and making it plural.
+
+For example:
+
+(i.e. the conventions is such that if your table name is in plural form, Eloquent changes it to singular form and also uses snake case for table names separatd by _)
+A Flight model will use the flights table.
+An AirTrafficController model will use the air_traffic_controllers table.
+READ ON MASS ASSIGNMENTS
+READ ALSO ON THE PHP ARTISAN TINKER
+php artisan help command
+adding the 'help' before the command gives 
+practice more of querying of the database using the eloquent ORM
+
