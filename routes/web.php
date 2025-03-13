@@ -7,11 +7,12 @@ use App\Models\job;
 
 
 Route::get('/', function () {
-    // the view takes a second argument, an array that can take data to display on the view
+    // $jobs = job::all();
+    // dd($jobs);
+
     return view('home', [
-        // in key-value pairs
-        'greeting'=>'Hello',
-        'name'=>'Lawrence',
+        'greeting' => 'Hello',
+        'name' => 'Lawrence',
         
     ]);
 });
