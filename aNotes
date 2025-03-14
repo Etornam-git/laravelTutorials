@@ -2,6 +2,8 @@
 2. installed php in herd
 3. created a new laravel app
 
+------AT THE END WE USE VITODEPLOY AS AN ALTERNATIVE TO LARAVEL FORGE--------
+
 /\DAY 1/\
 a. first lesson on routes: hold the links to the various views(webpages)
 
@@ -75,3 +77,8 @@ php artisan help command
 adding the 'help' before the command gives 
 practice more of querying of the database using the eloquent ORM
 
+-practicing more on using eloquent to query our database
+
+/\DAY 10/\
+Factories 
+For a case where dummy data is need to manipulate our tables in the database we can use eloquent's factory to seed(populate our database tables) our tables. A template that comes with everu new laravel app is the UserFactory
