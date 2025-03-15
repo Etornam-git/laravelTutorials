@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('job_listings', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
-            // adding foreign ID from the Employer Model (table) to the job_listing table
-            $table->foreignIdFor(\App\Models\Employer::class);
-            $table->string('title');
-            $table->string('Salary');
+            $table->String('product_name');
+            $table->String('product_price');
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('job_listings');
+        Schema::dropIfExists('products');
     }
 };
