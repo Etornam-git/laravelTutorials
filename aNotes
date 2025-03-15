@@ -5,6 +5,7 @@
 ------AT THE END WE USE VITODEPLOY AS AN ALTERNATIVE TO LARAVEL FORGE--------
 
 /\DAY 1/\
+Introduction to The laravel journey. 
 a. first lesson on routes: hold the links to the various views(webpages)
 
 /\DAY 2/\
@@ -82,3 +83,6 @@ practice more of querying of the database using the eloquent ORM
 /\DAY 10/\
 Factories 
 For a case where dummy data is need to manipulate our tables in the database we can use eloquent's factory to seed(populate our database tables) our tables. A template that comes with everu new laravel app is the UserFactory
+---ADDING FOREIGN KEYS 
+IN MIGRATIONS(TABLE STRUCTURE DESCRIPTION) to reflect in their corresponding models where the data is represent by the column names.
+For everything to work perfectly, for every 'table' there must be a corresponding model(data rep), factory(as the name suggests: a place where dummy data to suite the column description by the    library), migrations(table structure definition). Making necessary imports to the corresponding files in case of data relationship. There for multiple table connections there must be the need to relate them by a foreign key as in  a normal database.
