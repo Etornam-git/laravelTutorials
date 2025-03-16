@@ -90,3 +90,12 @@ For everything to work perfectly, for every 'table' there must be a correspondin
 
 /\DAY 11/\
 Eloquent relationships. belongsto, hasMany (Example of a few of the relationship types)
+
+/\PRACTICE CONCEPTS/\
+Models.
+Migrations.
+Factories
+ELOQUENT ORM - RELATIONSHIPS, FOREIGN KEYS
+--Dealing with social media logic--
+Made a blog post page where each blog has a title, content and each post has comment under it
+Made models, factories, migrations, post view and routes. Since every post has it's own comment, I learnt to use the with property to support the relationship(in methods) (i.e. the hasMany and belongsTo relationships)

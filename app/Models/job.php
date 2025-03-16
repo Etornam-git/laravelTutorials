@@ -28,4 +28,4 @@ class job extends Model
     // getting the relationships between tables
 
 }
-$table->id();
+// $table->id();
