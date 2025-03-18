@@ -90,6 +90,9 @@ For everything to work perfectly, for every 'table' there must be a correspondin
 
 /\DAY 11/\
 Eloquent relationships. belongsto, hasMany (Example of a few of the relationship types)
+The relationship method takes it's first method as the  class_name::class
+Foreign keys can be explicitly declared as a second argument in our relationship method (hasOne,hasMany etc) if they do not follow the normal convention (i.e.foregin-key table_id)
+also if the parent also uses a different convention from the normal one then the the relation method takes a 3rd argument called the local_variable
 
 /\PRACTICE CONCEPTS/\
 Models.
@@ -99,3 +102,11 @@ ELOQUENT ORM - RELATIONSHIPS, FOREIGN KEYS
 --Dealing with social media logic--
 Made a blog post page where each blog has a title, content and each post has comment under it
 Made models, factories, migrations, post view and routes. Since every post has it's own comment, I learnt to use the with property to support the relationship(in methods) (i.e. the hasMany and belongsTo relationships)
+
+/\DAY 12/\
+Activating relationships between tables.
+Learnt about the constrained method and the oncascadedelete methods that work together to enable deletion of all occurences of rows containing a specific id. For default setting in laravel doing this is activated but you'll have to activate it in sql lite
+Via the SQL tab in table plus we run "PRAGMA foreign_keys=on" to activate the features for foreign keys
+learnt two news stuff, 
+foreignPivotKey:In a model when a method is to retrieve data, it is used when the foreign key doesn't follow the stndard default primary/ foreign key naming AND
+relatedPivotKey:In a model when a method is to retrieve data, it is used when the primary doesn't follow the stndard default primary/ foreign key naming 
