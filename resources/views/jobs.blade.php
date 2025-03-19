@@ -36,6 +36,9 @@
                                 <a href="/job/{{ $job['id'] }}" class="hover:text-blue-600 transition-colors">
                                     {{ $job['title'] }}
                                 </a>
+                                <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                                    {{ $job->employer->name }}
+                                </span>
                             </h2>
                             <div class="flex items-center gap-2 mb-4">
                                 <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
@@ -50,18 +53,12 @@
                                 <span>{{ $job['schedule'] ?? 'Full-time' }}</span>
                             </div>
                         </div>
-                        <div class="ml-4">
-                            @if($job['featured'])
-                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-orange-100 text-orange-800">
-                                Featured
-                            </span>
-                            @endif
-                        </div>
+                       
                     </div>
                     
                     <div class="mt-4 flex items-center justify-between">
                         <div class="flex items-center space-x-2">
-                            @foreach($job['tags'] ?? [] as $tag)
+                            @foreach($tag['name'] ?? [] as $tag)
                             <span class="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-sm">
                                 {{ $tag }}
                             </span>

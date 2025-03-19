@@ -12,35 +12,35 @@
                 <article class="p-6">
                     <div class="mb-4">
                         <h2 class="text-2xl font-semibold text-gray-800 hover:text-blue-600 transition-colors duration-200">
-                            {{ $post['title'] }}
+                            {{ $post->title }}
                         </h2>
                         <time class="text-sm text-gray-500" datetime="{{ $post->created_at }}">Published on {{ $post->created_at->format('M j, Y') }}</time>
                     </div>
                     
                     <p class="text-gray-600 leading-relaxed mb-6">
-                        {{ $post['content'] }}
+                        {{ $post->content }}
                     </p>
 
                     <div class="border-t pt-4">
-                        <h3 class="text-sm font-semibold text-gray-500 uppercase mb-3">Comments ({{ count($post->comments) }})</h3>
+                        <h3 class="text-sm font-semibold text-gray-500 uppercase mb-3">Comments ({{ $post->comments->count() }})</h3>
                         <ul class="space-y-3">
                             @foreach ($post->comments as $comment)
                             <li class="bg-gray-50 p-3 rounded-md border-l-4 border-blue-200 hover:border-blue-400 transition-colors duration-200">
                                 <div class="text-sm text-gray-600">
                                     
-                                    <p class="mt-1">{{ $comment['comment'] }}</p>
+                                    <p class="mt-1">{{ $comment->comment }}</p>
                                 </div>
                             </li>
                             @endforeach
-                            @foreach ($post->tag as $tag)
+                           
+                            @foreach ($post->tags as $tag)
                             <li class="bg-gray-50 p-3 rounded-md border-l-4 border-blue-200 hover:border-blue-400 transition-colors duration-200">
                                 <div class="text-sm text-gray-600">
                                     
-                                    <p class="mt-1">Tags: {{ $tag['name'] }}</p>
+                                    <p class="mt-1">Tags: {{ $tag->name }}</p>
                                 </div>
                             </li>
-                            @endforeach
-
+                           @endforeach
                         </ul>
                     </div>
                 </article>
