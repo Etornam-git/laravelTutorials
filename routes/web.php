@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Models\job; 
-use App\Models\Comment;
 use App\Models\Post;
 
 
@@ -48,6 +47,7 @@ Route::get('/job/{id}/', function ($id){
 
 Route::get('/posts', function () {
     $posts = Post::with('comments')->get();
+    // $post = Post::with
     return view('posts', ['posts' => $posts]);
 });
 // Another method of redefining the $id variable.

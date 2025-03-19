@@ -3,6 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use \App\Models\Post;
+use \App\Models\Tag;
 
 return new class extends Migration
 {
@@ -17,6 +19,15 @@ return new class extends Migration
             $table->String('content');
             $table->timestamps();
         });
+
+
+        // pivot table for post and tags to enable ease of data querying
+        Schema::create('post_tag', function (Blueprint $table) {
+            $table->id();
+            $table->foreignIdFor(\App\Models\Post::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(\App\Models\Tag::class)->constrained()->cascadeOnDelete();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -25,5 +36,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('posts');
+        Schema::dropIfExists('tags');
     }
 };

@@ -110,3 +110,6 @@ Via the SQL tab in table plus we run "PRAGMA foreign_keys=on" to activate the fe
 learnt two news stuff, 
 foreignPivotKey:In a model when a method is to retrieve data, it is used when the foreign key doesn't follow the stndard default primary/ foreign key naming AND
 relatedPivotKey:In a model when a method is to retrieve data, it is used when the primary doesn't follow the stndard default primary/ foreign key naming 
+
+Assignment:
+Make a post_tag pivot table

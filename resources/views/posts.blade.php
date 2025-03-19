@@ -32,6 +32,15 @@
                                 </div>
                             </li>
                             @endforeach
+                            @foreach ($post->tag as $tag)
+                            <li class="bg-gray-50 p-3 rounded-md border-l-4 border-blue-200 hover:border-blue-400 transition-colors duration-200">
+                                <div class="text-sm text-gray-600">
+                                    
+                                    <p class="mt-1">Tags: {{ $tag['name'] }}</p>
+                                </div>
+                            </li>
+                            @endforeach
+
                         </ul>
                     </div>
                 </article>
