@@ -27,9 +27,9 @@ Route::get('/about', function () {
 
 // normal jobs page route. Where each line is a link to a job
 Route::get('/jobs', function (){
-    return view('jobs',[
-        'jobs' => job::all()]);
-    // laravel includes an arr class that can be looped through to get the content
+    // disabled lazy loading..Using eager loading to fetch all records
+    $jobs = job::with('employer')->get();
+    return view('jobs',['jobs' => $jobs]);
    
 });
 
@@ -46,8 +46,8 @@ Route::get('/job/{id}/', function ($id){
     
 
 Route::get('/posts', function () {
-    $posts = Post::with('comments')->get();
-    // $post = Post::with
+    $posts = Post::with('comments', 'tags')->get();
+   
     return view('posts', ['posts' => $posts]);
 });
 // Another method of redefining the $id variable.
