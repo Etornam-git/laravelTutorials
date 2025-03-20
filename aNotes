@@ -119,3 +119,14 @@ Make a post_tag pivot table //DONE
 --This occurs when querying from the database is by lazy loading where each record or relevant data is queried differently so 1 query to fetch the table and N number of queries to fetch N records. This  slows down database efficiency and increasing load times for application.
 --As such Eager loading is employed where the whole table data is fetched, using the with() method to fetch table related data as well. For larger number of records it is not advisable or fetch limiting can be employed
 --In the service provider, we disabled the lazyloading in the boot() method using 'Model::preventLazyLoading()' differs from the 'Model::preventsLazyLoading()' that returns a boolean
+
+/\DAY 14/\
+Pagination: This comes to solve the problem of eager loading. Since in eager loading, all records are fetched, pagination (by pages) allows us to set a number of records per page, this aims at reducing work load on memory. There's also pagination links to aid go from page to page...
+For pagination there are 4 methods
+--paginate(n): this shows arrow buttons to move from page to page. Also there's page number set that allows jumping from one page to another without sequential movement.
+--simplePaginate(n): Simple pagination only as two buttons at both ends of the page, 'Previous' and 'Next', On hovering over the link you'll see '?page=n showing the currentpage number.
+--cursorPaginate(n): Like the simplePaginate(n) but in place of '?page=n', there's ?cursor=encoded value (i.e. the value of the cursor is in an encoded form). This is suitable for cases where large data sets are taken but there's no need for moving to a specific page.
+
+2. Also in our AppServiceProvider we can change the default view framework==Tailwindcss to any other using 'Paginator::useFrameworkName();'
+3. Also some packages that have been loaded through composer, can be published for manual edit
+using 'php artisan vendor:publish'

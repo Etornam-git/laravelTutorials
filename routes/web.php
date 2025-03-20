@@ -27,8 +27,8 @@ Route::get('/about', function () {
 
 // normal jobs page route. Where each line is a link to a job
 Route::get('/jobs', function (){
-    // disabled lazy loading..Using eager loading to fetch all records
-    $jobs = job::with('employer')->get();
+    // disabled lazy loading..Using eager loading to fetch all records...Pagination to solve eager loading problem of fetching all records
+    $jobs = job::with('employer')->paginate(5);
     return view('jobs',['jobs' => $jobs]);
    
 });
@@ -46,7 +46,7 @@ Route::get('/job/{id}/', function ($id){
     
 
 Route::get('/posts', function () {
-    $posts = Post::with('comments', 'tags')->get();
+    $posts = Post::with('comments', 'tags')->cursorPaginate(5);
    
     return view('posts', ['posts' => $posts]);
 });

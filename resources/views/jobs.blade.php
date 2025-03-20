@@ -92,5 +92,6 @@
             <h3 class="text-gray-500 text-lg">No current openings</h3>
         </div>
         @endif
+        <div> {{ $jobs->links() }} </div>
     </div>
 </x-layout>
