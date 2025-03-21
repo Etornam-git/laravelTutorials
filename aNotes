@@ -130,3 +130,7 @@ For pagination there are 4 methods
 2. Also in our AppServiceProvider we can change the default view framework==Tailwindcss to any other using 'Paginator::useFrameworkName();'
 3. Also some packages that have been loaded through composer, can be published for manual edit
 using 'php artisan vendor:publish'
+
+/\DAY 15/\
+Seeding database. In the database/seeder/DatabaseSeeder.php, the various factories for each model is called(only if set in the class file) and are populated with fake data according to the table structure set in the factories. This helps in populating the whole database in a single go. Better still, the chosen Model class to be seeded can be specified. 
+using the 'php artisan db:seeder --class=SeederClassName (default = DatabaseSeeder), we can specify which table we want to fill, or no class specialisation means we are filling all the factories set in the default DatabaseSeeder class.
