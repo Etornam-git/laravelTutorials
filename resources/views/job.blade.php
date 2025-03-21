@@ -31,6 +31,9 @@
                     <span class="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-semibold">
                         ${{ $job['Salary'] }}/year
                     </span>
+                    <p>Employer: <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                        {{ $job->employer->name }}
+                    </span></p>
                 </div>
 
                 <div class="flex flex-wrap gap-4 text-gray-600">

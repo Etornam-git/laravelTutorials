@@ -33,24 +33,24 @@
                     <div class="flex items-start justify-between">
                         <div class="flex-1">
                             <h2 class="text-xl font-semibold text-gray-900 mb-2">
-                                <a href="/job/{{ $job['id'] }}" class="hover:text-blue-600 transition-colors">
-                                    {{ $job['title'] }}
+                                <a href="/job/{{ $job->id}}" class="hover:text-blue-600 transition-colors">
+                                    {{ $job->title }}
                                 </a>
-                                <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                                <p>Employer: <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
                                     {{ $job->employer->name }}
-                                </span>
+                                </span></p>
                             </h2>
                             <div class="flex items-center gap-2 mb-4">
                                 <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
-                                    {{ $job['Salary'] }}/month
+                                    {{ $job->Salary }}/month
                                 </span>
-                                <span class="text-gray-500 text-sm">• {{ $job['location'] ?? 'Remote' }}</span>
+                                <span class="text-gray-500 text-sm">• {{ $job->location ?? 'Remote' }}</span>
                             </div>
                             <div class="flex items-center gap-2 text-sm text-gray-500">
                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                                 </svg>
-                                <span>{{ $job['schedule'] ?? 'Full-time' }}</span>
+                                <span>{{ $job->schedule ?? 'Full-time' }}</span>
                             </div>
                         </div>
                        
@@ -58,7 +58,7 @@
                     
                     <div class="mt-4 flex items-center justify-between">
                         <div class="flex items-center space-x-2">
-                            @foreach($tag['name'] ?? [] as $tag)
+                            @foreach($tag->name ?? [] as $tag)
                             <span class="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-sm">
                                 {{ $tag }}
                             </span>
@@ -92,5 +92,6 @@
             <h3 class="text-gray-500 text-lg">No current openings</h3>
         </div>
         @endif
+        <div> {{ $jobs->links() }} </div>
     </div>
 </x-layout>
