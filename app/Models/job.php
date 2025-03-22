@@ -23,7 +23,12 @@ class job extends Model
         return $this->belongsTo(Employer::class);
     }
     // ALL THE PROPERTIES IN THE $FILLABLE ARRAY CAN BE MASS-ASSIGNED
-    protected $fillable = ['title', 'description', 'salary'];
+    // adding the employer_id to allow mass assignment
+    // protected $fillable = ['title','employer_id', 'salary'];
+    // the guarded property is the opposite of the fillable property, 
+    // it disables the fillable--mass assignment. it describes the fields that are not mass assignable
+    protected $guarded = [];
+
     
     public function tags():BelongsToMany
     {
