@@ -31,13 +31,13 @@ Route::get('/jobs', function (){
    
 });
 
-
-Route::get('/jobs/create', function (){
     // disabled lazy loading..Using eager loading to fetch all records...Pagination to solve eager loading problem of fetching all records
-    $jobs = job::with('employer')->latest()->paginate(5);
-    return view('jobs.create',['jobs' => $jobs]);
+
+// Route::get('/jobs/create', function (){
+//     $jobs = job::with('employer')->latest()->paginate(5);
+//     return view('jobs.create',['jobs' => $jobs]);
    
-});
+// });
 Route::post('/jobs', function (){
     // dd(request()->all());
     // validate the form
