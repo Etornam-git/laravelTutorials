@@ -1,20 +1,3 @@
-{{-- <!-- calling html tags as layouts -->
-<x-layout>
-    <x-slot:heading>
-        Jobs Page
-    </x-slot:heading>
-    <ul>
-        @foreach ($jobs as $job)
-        <li>
-            <a href="/job/{{ $job['id'] }}" class="text-blue-500 hover:underline">
-                <strong>{{ $job['title'] }}</strong>:  pay {{ $job['Salary'] }} per month
-            </a>
-         </li>
-        @endforeach
-    </ul>
- </x-layout> --}}
-
-
  <x-layout>
     <x-slot:heading>
         Jobs Page
@@ -25,7 +8,11 @@
             <h1 class="text-4xl font-bold text-gray-900 mb-4">Career Opportunities</h1>
             <p class="text-lg text-gray-600">Find your next professional challenge</p>
         </div>
-
+        <div class="mb-8 text-right">
+            <a href="/jobs/create" class="inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-500 active:bg-blue-700 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-200 disabled:opacity-25 transition">
+                Add New Job
+            </a>
+        </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             @foreach ($jobs as $job)
             <div class="relative bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-100">
