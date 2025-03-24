@@ -134,3 +134,10 @@ using 'php artisan vendor:publish'
 /\DAY 15/\
 Seeding database. In the database/seeder/DatabaseSeeder.php, the various factories for each model is called(only if set in the class file) and are populated with fake data according to the table structure set in the factories. This helps in populating the whole database in a single go. Better still, the chosen Model class to be seeded can be specified. 
 using the 'php artisan db:seeder --class=SeederClassName (default = DatabaseSeeder), we can specify which table we want to fill, or no class specialisation means we are filling all the factories set in the default DatabaseSeeder class.
+
+/\DAY 16 /\
+Dealing with forms. The 'csrf' directive must be included in all laravel forms to prevent cross-site by including tokenization(i.e. every form input has a token that must be same as the token in the current session) ...Even in it's absence, laravel give an error on that page until it is placed right under the opening tag. 
+
+/\DAY 17/\
+Form validation. Making sure restrictions are placed on the various form inputs to secure the system.
+This is done in the routes file(web.php) under the said post request, where input is validate even before reaching eloquent's create command

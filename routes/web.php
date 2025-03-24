@@ -8,7 +8,6 @@ use App\Models\Post;
 
 
 Route::get('/', function () {
-
     return view('home', [
         'greeting' => 'Hello',
         'name' => 'Lawrence',
@@ -19,11 +18,11 @@ Route::get('/', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+
 Route::get('/about', function () {
     return view('about');
 });
 
-// normal jobs page route. Where each line is a link to a job
 Route::get('/jobs', function (){
     // disabled lazy loading..Using eager loading to fetch all records...Pagination to solve eager loading problem of fetching all records
     $jobs = job::with('employer')->paginate(5);
@@ -33,18 +32,22 @@ Route::get('/jobs', function (){
 
     // disabled lazy loading..Using eager loading to fetch all records...Pagination to solve eager loading problem of fetching all records
 
-// Route::get('/jobs/create', function (){
-//     $jobs = job::with('employer')->latest()->paginate(5);
-//     return view('jobs.create',['jobs' => $jobs]);
+Route::get('/jobs/create', function (){
+    $jobs = job::with('employer')->latest()->paginate(5);
+    return view('jobs.create',['jobs' => $jobs]);
    
-// });
+});
 Route::post('/jobs', function (){
-    // dd(request()->all());
+    
     // validate the form
+    request()->validate([
+        'title' => ['required', 'min:3'],
+        'salary' => ['required'],
+    ]);
     job::create([
         'title' => request('title'),
         'salary' => request('salary'),
-        'employer_id' => 51,
+        'employer_id' => 53,
     ]);
    return redirect('/jobs');
 });
