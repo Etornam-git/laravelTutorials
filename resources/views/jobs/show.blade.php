@@ -1,12 +1,3 @@
-{{-- <x-layout>
-    <x-slot:heading>
-        Jobs Page
-    </x-slot:heading>
-        <h2 class="text-xl font-bold "> {{ $job['title'] }} </h2>
-        <p class="text-lg">This job pays {{ $job['Salary'] }} per year </p>
-    </ul>
- </x-layout> --}}
-
  <x-layout>
     <x-slot:heading>
         Job Details
@@ -16,20 +7,28 @@
         <div class="bg-white rounded-2xl shadow-lg p-8 sm:p-12">
             <!-- Back to Jobs link -->
             <div class="mb-8">
-                <a href="/jobs" class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors">
+                <a href="/jobs/" class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
                     </svg>
                     Back to All Jobs
                 </a>
             </div>
+            <div>
+                <a class="inline-flex items-center text-green-600 " href="/jobs/{{ $job->id }}/edit">Edit Job</a>
+            <div class="text-right">
+                <a class="inline-flex items-center text-red-600" href="/jobs/{{ $job->id }}">
+                    <button form="delete-form" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition-colors">Delete Job</button>
+                </a>w
+            </div>
+
 
             <!-- Main Job Header -->
             <header class="mb-8">
                 <div class="flex items-center justify-between mb-6">
-                    <h1 class="text-4xl font-bold text-gray-900">{{ $job['title'] }}</h1>
+                    <h1 class="text-4xl font-bold text-gray-900">{{ $job->title }}</h1>
                     <span class="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-semibold">
-                        ${{ $job['Salary'] }}/year
+                        ${{ $job->Salary }}/year
                     </span>
                     <p>Employer: <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
                         {{ $job->employer->name }}
@@ -71,5 +70,9 @@
                
         
         </div>
+        <form id="delete-form" method="POST" action="/jobs/{{ $job->id }}" class="hidden">
+            @csrf
+            @method('DELETE')
+        </form>
     </div>
 </x-layout>

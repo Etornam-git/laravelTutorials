@@ -130,6 +130,7 @@ For pagination there are 4 methods
 2. Also in our AppServiceProvider we can change the default view framework==Tailwindcss to any other using 'Paginator::useFrameworkName();'
 3. Also some packages that have been loaded through composer, can be published for manual edit
 using 'php artisan vendor:publish'
+ // disabled lazy loading..Using eager loading to fetch all records...Pagination to solve eager loading problem of fetching all records
 
 /\DAY 15/\
 Seeding database. In the database/seeder/DatabaseSeeder.php, the various factories for each model is called(only if set in the class file) and are populated with fake data according to the table structure set in the factories. This helps in populating the whole database in a single go. Better still, the chosen Model class to be seeded can be specified. 
@@ -141,3 +142,7 @@ Dealing with forms. The 'csrf' directive must be included in all laravel forms t
 /\DAY 17/\
 Form validation. Making sure restrictions are placed on the various form inputs to secure the system.
 This is done in the routes file(web.php) under the said post request, where input is validate even before reaching eloquent's create command
+
+/\DAY 18/\
+The full CRUD operation is complete. We use the @method('PATCH') in our form to allow updating any record and in the route file too we see Route::patch(). Also the delete route, deleting a row by id.
+
