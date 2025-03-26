@@ -146,3 +146,6 @@ This is done in the routes file(web.php) under the said post request, where inpu
 /\DAY 18/\
 The full CRUD operation is complete. We use the @method('PATCH') in our form to allow updating any record and in the route file too we see Route::patch(). Also the delete route, deleting a row by id.
 
+/\DAY 19/\ - Routes Reloaded
+Routes Model Binding
+Controller classes

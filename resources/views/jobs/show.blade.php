@@ -19,7 +19,7 @@
             <div class="text-right">
                 <a class="inline-flex items-center text-red-600" href="/jobs/{{ $job->id }}">
                     <button form="delete-form" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition-colors">Delete Job</button>
-                </a>w
+                </a>
             </div>
 
 

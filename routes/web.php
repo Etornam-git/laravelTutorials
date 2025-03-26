@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\JobController;
 
 use App\Models\job; 
 use App\Models\Post;
@@ -22,69 +23,13 @@ Route::get('/about', function () {
     return view('about');
 });
 
-// index
-Route::get('/jobs', function (){
-    $jobs = job::with('employer')->latest()->paginate(5);
-    return view('jobs.index',['jobs' => $jobs]);
-});
-
-
-// create
-Route::get('/jobs/create', function (){
-    $jobs = job::with('employer')->paginate(5);
-    return view('jobs.create',['jobs' => $jobs]);
-});
-
-// show
-Route::get('/jobs/{id}/', function ($id){ 
-    $job = job::find($id);
-    return view('jobs.show',['job' => $job]); 
-});
-
-// store
-Route::post('/jobs', function (){
-    request()->validate([
-        'title' => ['required', 'min:3'],
-        'salary' => ['required'],
-    ]);
-    job::create([
-        'title' => request('title'),
-        'salary' => request('salary'),
-        'employer_id' => 53,
-    ]);
-   return redirect('/jobs');
-});
-
-// edit
-Route::get('/jobs/{id}/edit', function ($id){ 
-    $job = job::find($id);
-    return view('jobs.edit',['job' => $job]); 
-});
-
-
-// update
-Route::patch('/jobs/{id}', function ($id){ 
-    request()->validate([
-        'title' => ['required'],
-        'Salary' => ['required'],
-    ]);
-
-    $job = job::findOrFail($id);
-
-    $job->title = request('title');
-    $job->Salary = request('Salary');
-    $job->save();
-
-    return redirect('/jobs/'.$job->id); 
-});
-
-// delete
-Route::delete('/jobs/{id}', function ($id){ 
-
-    job::findOrFail($id)->delete();
-    
-   return redirect('/jobs');
-});
+Route::get('/jobs', [JobController::class, 'index']);
+Route::get('/jobs/create', [JobController::class, 'create']);
+Route::get('/jobs/{job}/', [JobController::class, 'show']);
+Route::post('/jobs', [JobController::class, 'store']);
+Route::get('/jobs/{job}/edit', [JobController::class, 'edit']);
+Route::patch('/jobs/{id}', [JobController::class, 'update']);
+Route::delete('/jobs/{id}', [JobController::class, 'delete']);
 
 
 
