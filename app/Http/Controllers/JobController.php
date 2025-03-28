@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\job;
+use App\Models\Employer;
 
 use Illuminate\Http\Request;
 
@@ -30,18 +31,19 @@ class JobController extends Controller
             'title' => ['required', 'min:3'],
             'salary' => ['required'],
         ]);
-        $job = job::findOrFail($job);
+   
+        $employerID = Employer::inRandomOrder()->first()->id;
+        
         job::create([
             'title' => request('title'),
             'salary' => request('salary'),
-            'employer_id' => 53,
+            'employer_id' => $employerID,
         ]);
        return redirect('/jobs');
     }
 
     public function edit(job $job)
     {
-        $job = job::findOrFail($job);
         return view('jobs.edit',['job' => $job]); 
     }
 
@@ -52,17 +54,21 @@ class JobController extends Controller
             'Salary' => ['required'],
         ]);
     
-        $job = job::findOrFail($job);
+        // $job = job::findOrFail($job);
     
         $job->title = request('title');
         $job->Salary = request('Salary');
+        $job->employer_id = request('employer_id');
         $job->save();
     
         return redirect('/jobs/'.$job->id); 
     }
 
-    public function delete(job $job)
+    public function destroy(job $job)
     {
-        job::findOrFail($job)->delete();
+        $job->delete();
+        return redirect('/jobs');
     }
+
+    
 }

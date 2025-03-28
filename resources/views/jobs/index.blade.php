@@ -23,9 +23,9 @@
                                 <a href="/job/{{ $job->id}}" class="hover:text-blue-600 transition-colors">
                                     {{ $job->title }}
                                 </a>
-                                <p>Employer: <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                                {{-- <p>Employer: <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
                                     {{ $job->employer->name }}
-                                </span></p>
+                                </span></p> --}}
                             </h2>
                             <div class="flex items-center gap-2 mb-4">
                                 <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">

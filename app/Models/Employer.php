@@ -11,6 +11,8 @@ class Employer extends Model
     /** @use HasFactory<\Database\Factories\EmployerFactory> */
     use HasFactory;
 
+    protected $fillable = ['name'];
+
     // this function serves as a relationship that states that : Every employer does multiple jobs
     public function job(): HasMany
     {

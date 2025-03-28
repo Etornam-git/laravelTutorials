@@ -15,7 +15,10 @@
                 </a>
             </div>
             <div>
-                <a class="inline-flex items-center text-green-600 " href="/jobs/{{ $job->id }}/edit">Edit Job</a>
+                <a class="inline-flex items-center text-green-600 " href="/jobs/{{ $job->id }}/edit">
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">Edit Job<button>
+
+                    </a>
             <div class="text-right">
                 <a class="inline-flex items-center text-red-600" href="/jobs/{{ $job->id }}">
                     <button form="delete-form" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition-colors">Delete Job</button>
@@ -30,9 +33,9 @@
                     <span class="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-semibold">
                         ${{ $job->Salary }}/year
                     </span>
-                    <p>Employer: <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
-                        {{ $job->employer->name }}
-                    </span></p>
+                    {{-- <p>Employer: <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                        {{-- {{ $job->employer->name }} --}}
+                    {{-- </span></p>  --}}
                 </div>
 
                 <div class="flex flex-wrap gap-4 text-gray-600">
