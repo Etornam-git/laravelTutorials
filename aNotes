@@ -164,3 +164,10 @@ first argument is the URI, second is name of the controller class, [an array of 
 
 The route resource is used to generate the standard CRUD operations with some other methods in the controller class file (index, create, store, show, edit, update, destroy)
 This all tho can be created in the web.php file for routes, can be replace by a single Route::resource() line specifying the controller class name and other important things
+
+
+/\DAY 20/\
+Started kits in laravel; Breeze etc. They give a smooth start,  configuring your database, making components, add authentications(basic for the app users), controllers etc. They come along with a whole package of important features to give the developer a good start.
+
+More into layouting--components can be segregated into individual file and referenced in needed files. Allows reusability...
+Laravel authentication
