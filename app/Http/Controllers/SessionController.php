@@ -16,10 +16,12 @@ class SessionController extends Controller
 
     public function store()
     {
+        // validate
         $attributes = request()->validate([
             'email' => 'required|email',
             'password' => 'required'
         ]);
+        
         // attempt to authenticate the user with the given credentials
         if(! Auth::attempt($attributes)){
             throw ValidationException::withMessages([
