@@ -11,7 +11,7 @@
               <x-form-field>
                 <x-form-label for="first_name" class="block text-sm/6 font-medium text-gray-900">First Name</x-form-label>
                 <div class="mt-2">
-                  <x-form-input type="text" name="name" id="first_name"  placeholder="John"  required/>
+                  <x-form-input type="text" name="first_name" id="first_name"  placeholder="John"  required/>
                   <x-form-error name="first_name" />
                 </div>
               </x-form-field>
@@ -19,7 +19,7 @@
               <x-form-field>
                 <x-form-label for="last_name" class="block text-sm/6 font-medium text-gray-900">Last Name</x-form-label>
                 <div class="mt-2">
-                  <x-form-input type="text" name="name" id="last_name"  placeholder="Doe"  required/>
+                  <x-form-input type="text" name="last_name" id="last_name"  placeholder="Doe"  required/>
                   <x-form-error name="last_name" />
                 </div>
               </x-form-field>
@@ -41,10 +41,10 @@
               </x-form-field>
 
               <x-form-field>
-                <x-form-label for="password_confirm" class="block text-sm/6 font-medium text-gray-900">Confirm Password</x-form-label>
+                <x-form-label for="password_confirmation" class="block text-sm/6 font-medium text-gray-900">Confirm Password</x-form-label>
                 <div class="mt-2">
-                  <x-form-input type="password" name="password" id="password_confirm"  placeholder="*********"  required/>
-                  <x-form-error name="password_confirm" />
+                  <x-form-input type="password" name="password_confirmation" id="password_confirmation"  placeholder="*********"  required/>
+                  <x-form-error name="password_confirmation" />
                 </div>
               </x-form-field>
               
